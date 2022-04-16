@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"code.rcp.org/gopkg/src/rc_strings"
+	"code.rcp.org/gopkg/rc_strings"
 )
 
 func main() {
