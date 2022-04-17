@@ -63,6 +63,22 @@ func (b *Builder) Grow(n int) {
 	}
 }
 
+// Write appends the contents of p to b's buffer
+// Write always returns len(p), nil.
+func (b *Builder) Write(p []byte) (int, error) {
+	b.copyCheck()
+	b.buf = append(b.buf, p...)
+	return len(p), nil
+}
+
+// WriteByte appends the byte c to b's buffer.
+// The returned error is always nil.
+func (b *Builder) WriteByte(c byte) error {
+	b.copyCheck()
+	b.buf = append(b.buf, c)
+	return nil
+}
+
 // WriteString appends the content of s to b's buffer.
 // It returns the length of s and a nil error
 func (b *Builder) WriteString(s string) (int, error) {
