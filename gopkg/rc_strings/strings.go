@@ -29,6 +29,11 @@ func Join(elems []string, sep string) string {
 	return b.String()
 }
 
+// HasPrefix tests where the string begins with prefix.
+func HasPrefix(s, prefix string) bool {
+	return len(s) >= len(prefix) && s[0:len(prefix)] == prefix
+}
+
 // TODO Daniel
 // Map returns a copy of the string s with all its characters modified
 // according to the mapping function. If mapping returns a negative value, the character is
